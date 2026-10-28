@@ -1,0 +1,7 @@
+FROM node:18-alpine   #Updates node to this version.
+WORKDIR /app
+COPY package*.json ./  #Copies package
+RUN npm install       #Install dependencies
+COPY . .              #Copies files in the current directory.
+EXPOSE 3000           #This port number is what it listens from the node server js file.
+CMD ["npm","start"]   #command that starts the files.
